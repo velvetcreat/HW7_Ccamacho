@@ -1,6 +1,14 @@
 body {
     font-family: sans-serif;
   }
+  .weather-app {
+    border: 10px inset rgba(220, 240, 253, 0.3);
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 20px;
+  }
   .searchBar {
     display: block;
     margin: auto;
@@ -9,11 +17,22 @@ body {
     margin-bottom: 20px;
     padding: 10px 0px;
   }
+
+  .weather-app .active{
+    color: black ;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .weather-app .active:hover{
+    color: #0D6EFD;
+    text-decoration: none;
+  }
   .unitButton {
+    cursor: default;
     display: block;
     margin: auto;
     top: 0;
-  text-align: center;
+    text-align: center;
   }
   .currentButton {
     background-color: #efefef;
@@ -22,15 +41,16 @@ body {
     display: block;
     margin: 0 auto;
     border-radius: 30px;
-    padding: 10px 30px;
+    padding: 5px 20px;
     transition: all 200ms ease-in-out;
   }
   .currentButton:hover {
+    background-color: #e0e0e0;
     color: #bfbfbf;
     display: block;
     margin: 0 auto;
     border-radius: 30px;
-    padding: 10px 30px;
+    padding: 5px 20px;
     color: darkblue;
   }
   .currentButton:active {
@@ -40,6 +60,9 @@ body {
     display: inline;
     margin: auto;
     text-align: center;
+  }
+  .last-updated {
+    color: #c7c7c7;
   }
   
   .city,
@@ -51,6 +74,7 @@ body {
     margin: auto;
     padding: 10px 0px;
     text-align: center;
+    text-transform: capitalize;
   }
   
   .tempUnits {
