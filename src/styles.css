@@ -1,5 +1,6 @@
 body {
     font-family: sans-serif;
+    background: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
   }
   .weather-app {
     border: 10px inset rgba(220, 240, 253, 0.3);

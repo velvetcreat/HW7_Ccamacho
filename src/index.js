@@ -81,7 +81,7 @@ function showCurrentTemp(response) {
   iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
   celsiusTemperature= response.data.main.temp;
-  temperatureElement.innerHTML=Math.round(celsiusTemperature);
+  temperatureElement.innerHTML= Math.round(celsiusTemperature);
 }
 //                  units C | F
 //                 imperial  unit function
