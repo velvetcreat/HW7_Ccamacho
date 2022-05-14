@@ -1,0 +1,113 @@
+body {
+    font-family: sans-serif;
+  }
+  .searchBar {
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 10px 0px;
+  }
+  .unitButton {
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 0;
+    right: 200;
+  }
+  .currentButton {
+    background-color: #efefef;
+    border-color: #efefef;
+    color: black;
+    display: block;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding: 10px 30px;
+    transition: all 200ms ease-in-out;
+  }
+  .currentButton:hover {
+    color: #bfbfbf;
+    display: block;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding: 10px 30px;
+    color: darkblue;
+  }
+  .currentButton:active {
+    background-color: #ffffff;
+  }
+  .current-emoji {
+    display: inline;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .city,
+  h3 {
+    font-size: 50px;
+    font-weight: 600;
+    font-family: monospace;
+    display: inline;
+    margin: auto;
+    padding: 10px 0px;
+    text-align: center;
+  }
+  
+  .tempUnits {
+    font-size: 50px;
+    font-weight: 400;
+    list-style: none;
+    text-decoration: none;
+  }
+  .current-date {
+    font-weight: 100;
+    text-decoration: none;
+    list-style: none;
+  }
+  .container {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+  .card {
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgb(205, 234, 252);
+  }
+  h4 {
+    color: rgb(35, 97, 231);
+    font-size: 32px;
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+  .weekdays {
+    text-decoration: none;
+    list-style: none;
+  }
+  div.scrollmenu {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  h5 {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+  .moonphase {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .sunset {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+  
