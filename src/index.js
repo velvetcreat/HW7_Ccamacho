@@ -53,7 +53,7 @@ function showCity(event) {
   place.innerHTML = `${currentCity}`;
 
   let apiKey = "7a25c6b2ec87adec4dc53604efe82144";
-  let units = "imperial";
+  let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(showCurrentTemp);
@@ -72,30 +72,29 @@ function showCurrentTemp(response) {
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `Humidity: ${humidityTemp}%`;
 
-  let windSpeed = Math.round(response.data.wind.speed.value);
+  let windSpeed = Math.round(response.data.wind.speed);
   let wind = document.querySelector("#wind");
-  wind.innerHTML = `Wind: ${wind}km/h`;
+  wind.innerHTML = `Wind: ${windSpeed}km/h`;
 
   let iconElement = document.querySelector("#current-icon");
   iconElement.setAttribute("alt", response.data.weather[0].description);
   iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
   celsiusTemperature= response.data.main.temp;
+  temperatureElement.innerHTML=Math.round(celsiusTemperature);
 }
 //                  units C | F
-//                 imperial  units
+//                 imperial  unit function
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#current-temp");
   //    remove the class from the celsius link
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  let fahrTemp = (celsiusTemperature * 9)/ 5 + 32;
+  let fahrTemp = (celsiusTemperature * 9/5) + 32;
   temperatureElement.innerHTML = Math.round(fahrTemp);
 }
-let fahrenheitLink = document.querySelector("#fahr-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
-//                    metric unit
+//                    metric unit function
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#current-temp");
@@ -104,12 +103,14 @@ function convertToCelsius(event) {
   fahrenheitLink.classList.remove("active")
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+//            global variable of units C & F
 celsiusTemperature = null;
 let celsiusLink = document.querySelector("#cel-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
-//Bonus:Current location button & temperature
-
+let fahrenheitLink = document.querySelector("#fahr-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+//Current location button & temperature
 //              1.Current trigger button
 let currentButton = document.querySelector(".currentButton");
 currentButton.addEventListener("click", retrievePosition);
@@ -142,4 +143,8 @@ function showAreaTemp(response) {
   let currentDescription = response.data.weather[0].main;
   let description = document.querySelector(".description");
   description.innerHTML = `"Current weather outlook: ${currentDescription}"`;
+
+  let iconElement = document.querySelector("#current-icon");
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+  iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
