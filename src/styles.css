@@ -59,9 +59,7 @@ top:-20px;
     margin: auto;
     text-align: center;
   }
-  .last-updated {
-    color: #c7c7c7;
-  }
+  
   
   .city,
   h3 {
@@ -90,6 +88,9 @@ top:-20px;
     display: block;
     margin: auto;
     text-align: center;
+  }
+  .last-updated {
+    color: #c7c7c7;
   }
   .card {
     display: block;

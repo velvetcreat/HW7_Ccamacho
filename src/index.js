@@ -42,7 +42,7 @@ currentDate.innerHTML = formatDate(now);
 
 //               Search button activation from form
 let showCurrentCity = document.querySelector("#search-city");
-showCurrentCity.addEventListener("click", showCity);
+showCurrentCity.addEventListener("submit", showCity);
 
 //              connecting axios & Open Weather API &&
 //               New search updating HTML city
@@ -114,7 +114,8 @@ celsiusLink.addEventListener("click", convertToCelsius);
 let currentButton = document.querySelector(".currentButton");
 currentButton.addEventListener("click", retrievePosition);
 //                 2.Using navigator geolocater
-function retrievePosition(position) {
+function retrievePosition(event) {
+  event.preventDefault();
   navigator.geolocation.getCurrentPosition(currentPosition);
 }
 //                3. Gathering API data
@@ -132,7 +133,7 @@ function currentPosition(position) {
 function showAreaTemp(response) {
   let currentTemp = Math.round(response.data.main.temp);
   let temperature = document.querySelector("#current-temp");
-  temperature.innerHTML = `${currentTemp}°F`;
+  temperature.innerHTML = `${currentTemp}`;
 
   let currentCity = response.data.name;
   let place = document.querySelector("#current-city");
