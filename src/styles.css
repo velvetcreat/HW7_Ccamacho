@@ -27,12 +27,10 @@ body {
     color: #0D6EFD;
     text-decoration: none;
   }
-  .unitButton {
-    cursor: default;
-    display: block;
-    margin: auto;
-    top: 0;
-    text-align: center;
+.weather-app .units{
+position: relative;
+font-size:20px;
+top:-20px;
   }
   .currentButton {
     background-color: #efefef;
@@ -72,7 +70,7 @@ body {
     font-family: monospace;
     display: inline;
     margin: auto;
-    padding: 10px 0px;
+    padding: 0px 0px;
     text-align: center;
     text-transform: capitalize;
   }

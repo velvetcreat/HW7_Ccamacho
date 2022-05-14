@@ -23,30 +23,31 @@
 					<input type="text" id="city-input" placeholder="Search for a city" />
 					<input type="submit" id="search-city" value="search" />
 					<div class="float-left">
-						<!--Temperature Unit converter-->
-						<span class="units"><a href="#"id ="cel-link" class="active">°C </a> | <a href="#"id ="fahr-link" class="active">°F</a></span>
-				</form>
-							<button class="currentButton"> my 📍</button>
-						</br>
-						<!--Current data of city,date,temp-->
-						<div class="col">
-								</div>
-							<div class="col">
-								<div class="row row-cols-1">
-								<h3 id="current-city"> Los Angeles </h3>
-								</div>
-									<img src="https://media3.giphy.com/media/h7Lgumb5lyfLk7mctB/giphy.gif?cid=ecf05e47lfdlu4tx0kfkg2xw2n9o081w70ro36hce6loo6bf&rid=giphy.gif&ct=s" 
-									width="150px"
-									alt="Clear" 
-									id="current-icon"
-									class="float-left"
-									/>
-									<span class="tempUnits" id="current-temp">80°F</span>
+						</form>
+					<button class="currentButton"> my 📍</button>
+				</br>
+				<!--Current data of city,date,temp-->
+				<div class="col">
+				</div>
+				<div class="col">
+					<div class="row row-cols-1">
+						<h3 id="current-city"> Los Angeles </h3>
+					</div>
+					<img src="https://media3.giphy.com/media/h7Lgumb5lyfLk7mctB/giphy.gif?cid=ecf05e47lfdlu4tx0kfkg2xw2n9o081w70ro36hce6loo6bf&rid=giphy.gif&ct=s" 
+					width="150px"
+					alt="Clear" 
+					id="current-icon"
+					class="float-left"
+					/>
+					<!--Temperature Unit converter-->
+					<span class="tempUnits" id="current-temp">
+						80</span><span class="units">
+							<a href="#" id ="cel-link"class="active">°C </a> | <a href="#"id ="fahr-link" class="active">°F</a>
+						</span>
 								</div>
 								<span class="description">"It is currently sunny, don't forget your sunscreen!"
 								</span>
-							
-					</div>
+							</div>
 						<br/>
 						<div class="col" id="last-updated">
 							<span >Last Updated:</span><h4 id="current-date"> 
@@ -58,9 +59,7 @@
 					</div>
 				</div>
 		</div>
-		
 		<!--Weekend Forecast of columns with (future) horizontal scrollbar in card-->
-		
 		<div class="container">
 			<div class="card">
 				<div class="card-body">

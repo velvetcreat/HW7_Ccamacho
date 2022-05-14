@@ -62,7 +62,7 @@ function showCity(event) {
 function showCurrentTemp(response) {
   let cityTemp = Math.round(response.data.main.temp);
   let degrees = document.querySelector("#current-temp");
-  degrees.innerHTML = `${cityTemp} °F`;
+  degrees.innerHTML = `${cityTemp}`;
 
   let cityDescription = response.data.weather[0].description;
   let description = document.querySelector(".description");
@@ -77,6 +77,7 @@ function showCurrentTemp(response) {
   wind.innerHTML = `Wind: ${wind}km/h`;
 
   let iconElement = document.querySelector("#current-icon");
+  iconElement.setAttribute("alt", response.data.weather[0].description);
   iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
   celsiusTemperature= response.data.main.temp;
@@ -97,9 +98,10 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 //                    metric unit
 function convertToCelsius(event) {
   event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
+   //    remove the class from the fahrenheit link
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active")
-  let temperatureElement = document.querySelector("#current-temp");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 celsiusTemperature = null;
