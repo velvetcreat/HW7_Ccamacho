@@ -110,7 +110,7 @@ celsiusLink.addEventListener("click", convertToCelsius);
 
 let fahrenheitLink = document.querySelector("#fahr-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
-//Current location button & temperature
+//          Current location button & temperature
 //              1.Current trigger button
 let currentButton = document.querySelector(".currentButton");
 currentButton.addEventListener("click", retrievePosition);
@@ -143,6 +143,14 @@ function showAreaTemp(response) {
   let currentDescription = response.data.weather[0].main;
   let description = document.querySelector(".description");
   description.innerHTML = `"Current weather outlook: ${currentDescription}"`;
+
+  let humidityTemp = Math.round(response.data.main.humidity);
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `Humidity: ${humidityTemp}%`;
+
+  let windSpeed = Math.round(response.data.wind.speed);
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = `Wind: ${windSpeed}km/h`;
 
   let iconElement = document.querySelector("#current-icon");
   iconElement.setAttribute("alt", response.data.weather[0].description);
