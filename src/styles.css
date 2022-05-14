@@ -12,9 +12,8 @@ body {
   .unitButton {
     display: block;
     margin: auto;
-    position: relative;
     top: 0;
-    right: 200;
+  text-align: center;
   }
   .currentButton {
     background-color: #efefef;
