@@ -23,14 +23,14 @@ function formatDate(date) {
 }
 let currentDate = document.querySelector("#current-date");
 currentDate.innerHTML = formatDate(now);
+//                    search engine function
 
-//search engine function
-//                Search button activation
+//               Search button activation from form
 let showCurrentCity = document.querySelector("#search-city");
 showCurrentCity.addEventListener("click", showCity);
 
 //              connecting axios & Open Weather API &&
-//               New search updating HTML// Display City
+//               New search updating HTML city
 function showCity(event) {
   event.preventDefault();
   let currentCity = document.querySelector("#city-input").value;
@@ -43,7 +43,7 @@ function showCity(event) {
 
   axios.get(apiUrl).then(showCurrentTemp);
 }
-//             Updated HTML with current temperature
+//      Update HTML temperature with current temperature from search
 function showCurrentTemp(response) {
   let cityTemp = Math.round(response.data.main.temp);
   let degrees = document.querySelector("#current-temp");
@@ -60,22 +60,28 @@ function showCurrentTemp(response) {
   let windSpeed = Math.round(response.data.wind.speed);
   let wind = document.querySelector("#wind");
   wind.innerHTML = `Wind: ${wind}km/h`;
+
+  celsiusTemperature= response.data.main.temp;
 }
 
-//3.bonus: Display a fake temperature (i.e 17) in Celsius
-//and add a link to convert it to Fahrenheit.
-//                    imperial unit
+ 
+//                 imperial  units
 function convertToFahrenheit(event) {
+  event.preventDefault();
   let temperatureElement = document.querySelector("#current-temp");
-  temperatureElement.innerHTML = "80°F / 72°F";
+  let fahrTemp = (celsiusTemperature * 9)/ 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrTemp);
 }
 let fahrenheitLink = document.querySelector("#fahr-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
 //                    metric unit
 function convertToCelsius(event) {
+  event.preventDefault();
   let temperatureElement = document.querySelector("#current-temp");
-  temperatureElement.innerHTML = "28°C / 22°C";
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+let celsiusTemperature = null;
 let celsiusLink = document.querySelector("#cel-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
