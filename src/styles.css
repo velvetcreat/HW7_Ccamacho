@@ -93,6 +93,10 @@ top:-20px;
  .last-updated {
     color: #969696;
   }
+.github{
+  text-align: center;
+}
+
   .card {
     display: block;
     margin: auto;
