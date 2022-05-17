@@ -88,7 +88,7 @@ function showCurrentTemp(response) {
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#current-temp");
-  //    remove the class from the celsius link
+  //    remove the class from the celsius link to set F
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let fahrTemp = (celsiusTemperature * 9/5) + 32;
@@ -98,7 +98,7 @@ function convertToFahrenheit(event) {
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#current-temp");
-   //    remove the class from the fahrenheit link
+   //    remove the class from the fahrenheit link to set C
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active")
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
