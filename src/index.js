@@ -91,7 +91,7 @@ function convertToFahrenheit(event) {
   //    remove the class from the celsius link to set F
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  let fahrTemp = (celsiusTemperature * 9/5) + 32;
+  let fahrTemp = (celsiusTemperature * 9)/5 + 32;
   temperatureElement.innerHTML = Math.round(fahrTemp);
 }
 //                    metric unit function
