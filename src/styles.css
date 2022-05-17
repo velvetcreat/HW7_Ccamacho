@@ -94,6 +94,8 @@ top:-20px;
     color: #969696;
   }
 .github{
+  display: block;
+  margin: auto;
   text-align: center;
 }
 
